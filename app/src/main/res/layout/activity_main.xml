@@ -7,32 +7,49 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
     <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Name"
             android:ems="10"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/edtQuote"
-            android:layout_marginTop="108dp"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_marginTop="40dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="Quote" android:layout_marginStart="20dp" android:layout_marginEnd="20dp"/>
     <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="10"
             android:id="@+id/edtAuthor"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="40dp"
             app:layout_constraintTop_toBottomOf="@+id/edtQuote"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
     <Button
-            android:text="Save"
+            android:text="Save Quote"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnSave" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="200dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintHorizontal_bias="0.286" android:layout_marginTop="72dp"
+            app:layout_constraintHorizontal_bias="0.572" android:layout_marginTop="16dp"
             app:layout_constraintTop_toBottomOf="@+id/edtAuthor" android:onClick="saveQuote"/>
+    <Button
+            android:text="Fetch Quote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnFetch" android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnSave" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintHorizontal_bias="0.882" android:onClick="fetchQuote"/>
+    <TextView
+            android:text="Inspring Quote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvQuote"
+            android:layout_marginTop="92dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnFetch" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"/>
 </android.support.constraint.ConstraintLayout>

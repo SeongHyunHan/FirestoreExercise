@@ -4,7 +4,10 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.EditText
+import android.widget.ListView
+import android.widget.TextView
 import com.google.firebase.firestore.FirebaseFirestore
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +20,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+    }
+
+    fun fetchQuote(view: View){
+        val quotes = findViewById<View>(R.id.tvQuote) as TextView
+        db.collection("exercise")
+            .get()
+            .addOnSuccessListener { result ->
+                for(document in result){
+                    val quote: String? = document.getString(QUOTE_KEY)
+                    val author: String? = document.getString(AUTHOR_KEY)
+
+                    val wholeQuote: String? = "Quote: " + quote + " Author: " + author
+                    quotes.text = wholeQuote
+                }
+             }
     }
 
     fun saveQuote(view: View){
